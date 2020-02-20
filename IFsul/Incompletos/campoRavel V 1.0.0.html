@@ -1,0 +1,126 @@
+
+
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Campo</title>
+	<style type="text/css">
+			table{
+				border: 1px solid;
+				background-color: gray;
+				width: 500px;
+				height: 500px; 
+				text-align: center;
+
+			}
+			td,tr{
+				border: 1px solid;
+				width: 50px;
+				height: 50px;
+
+			}
+			img{
+				width: 50px;
+				height:50px;
+				display: block;
+				margin: auto;
+			}
+		</style>
+</head>
+<body>
+	<form>
+	linhas:
+	<input type="number" name="linhas">
+	<br>
+	colunas:
+	<input type="number" name="colunas">
+	<br>
+	bombas:
+	<input type="number" name="bombas">
+	<br>
+	<input type="button" value="Iniciar" onclick="criaCampo(linhas.value,colunas.value,bombas.value)">
+	</form>
+
+	<script type="text/javascript">
+		//Acabei fazendo o trabalho sozinho, não fiz a questão seis pois não consegui pensar em uma forma de como construir o código
+		var posicaoBombas = [];
+		function CampoMinado(){
+					this.linha;
+					this.coluna;
+					this.bomba;
+			}
+		function criaCampo(linha,coluna,bomba) {
+
+				var campoExemplo = new CampoMinado();
+				if (linha>=5 && coluna>=5 && bomba>=3) { 
+					campoExemplo.linha = linha;
+					campoExemplo.coluna = coluna;
+					campoExemplo.bomba = bomba;
+				
+
+				var table=document.createElement("table");
+				table.id = "tabelaCampo";
+
+				for (var i = 0; i < campoExemplo.linha; i++) {
+
+					var tr=document.createElement("tr");
+
+					for (var j = 0; j < campoExemplo.coluna; j++) {	
+
+						var td=document.createElement("td");		
+						td.id= "X"+i+"Y"+j;	
+						td.innerText="*";
+						td.addEventListener("click",acionar);
+						tr.appendChild(td);
+					}
+					table.appendChild(tr);
+				}
+				document.body.appendChild(table);
+				}else{
+					alert("Minimo de 5 linhas, 5 colunas e 3 bombas");
+				}
+				var cont = 0;
+				
+				var ids = [];
+				var i;
+				var validacao = 0;
+				
+					while(posicaoBombas.length<campoExemplo.bomba){
+						var posicaoX = Math.floor(Math.random() * campoExemplo.linha);
+						var posicaoY = Math.floor(Math.random() * campoExemplo.coluna);
+						var idPosicaoBombas = "X"+posicaoX+"Y"+posicaoY;
+						
+						for(i=0;i<=posicaoBombas.length;i++){
+							if (idPosicaoBombas == posicaoBombas[i]) {
+								validacao++;
+							}
+						}
+						if(validacao==0){
+							posicaoBombas.push(idPosicaoBombas);
+						}
+						validacao = 0;
+						cont++;	
+							
+		}
+		
+		
+	};
+
+	function acionar(){
+		
+		var verifica = this.id;
+		
+		if(posicaoBombas.includes(verifica)){
+				this.style.backgroundColor = "red";
+				this.innerText="";
+		}
+		else{
+			this.style.backgroundColor="Green";
+		}
+		
+		
+	}
+	</script>
+
+</body>
+</html>
