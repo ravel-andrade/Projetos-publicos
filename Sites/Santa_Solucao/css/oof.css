@@ -1,0 +1,147 @@
+
+header {
+  min-height: 60px;
+  
+  top: 0;
+  right: 0;
+  left: 0;
+  border-bottom: 1px solid #ccc;
+  background: #ECECEC;
+  z-index: 2;
+}
+.numeros{background-color: white;}
+.div_fa{
+	width: 100%;
+}
+
+.empresa{
+	width: 100%;
+	font-size: 15px;
+	color:#686868;
+	font-family: Arial;
+	position: relative;
+	display: block;
+	background-color: white;
+}
+.empresa h1{
+	margin-top: 5%;
+	text-align: center;
+}
+.empresa h3{
+	margin-top: 5%;
+	text-align: center;
+}
+.empresa h2{
+	margin-top: 3%;
+	text-align: center;
+    width: 80%;
+    margin-left: 10%;
+}
+#visao {
+	float: left;
+	width: 40%;
+	margin-left: 8%;
+	margin-bottom: 20px;
+}
+#visao h3{
+	
+	text-align: left;
+}
+#missao {
+	
+	float: left;
+	width: 40%;
+	margin-left: 3%;
+}
+#missao h3{
+	
+	text-align: left;
+}
+
+.container marketing{
+	background-color: gray;
+	display: block;
+}
+.servicos_h1{
+
+	text-align: center;
+	width: 100%;
+	
+	color:#686868;
+	font-family: Roboto;
+}
+
+.contato{
+	margin-top: 40px;
+	width: 100%;
+	float: left;
+
+}
+.div_email{
+	
+	width: 40%;
+	margin-left: 3%;
+	float: left;
+}
+.div_email p{
+	margin-top: 40px;
+	text-align: center;
+	color: white;
+}
+
+.div_contatos{
+	width: 45%;
+	margin-left: 5%;
+	float: left;
+}
+.div_contatos p{
+	margin-top: 40px;
+	text-align: center;
+	color: white;
+}
+.contato h1{
+	margin-top: 3%;
+	color:#adb2b8;
+	
+	text-align: center;
+}
+
+
+
+.texto{
+	margin-top: 15px;
+}
+@media (max-width:600px) 
+{
+
+		
+  .servicos_h1{
+  	font-size: 20px;
+
+  }
+  .texto{
+  	font-size: 20px;
+  	margin-top: 15px;
+  }
+  .texto_interno{
+  	font-size: 15px;
+  }
+
+  .div_email{
+  	width: 80%;
+  	float: left;
+  	margin-left: 10%;
+  }
+  .div_contatos{
+  	width: 80%;
+  	float: left;
+  	margin-left: 10%;
+  }
+}
+
+@media (max-width: 300px) 
+{
+  #carouselExampleControls{
+   	margin-top: 160px;
+  }
+}
